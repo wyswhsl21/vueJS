@@ -7,7 +7,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app">{{nextYear('안녕하세요')}}</div>
+    <div id="app">
+      {{nextYear('안녕하세요')}}
+      <input :type="type" :value="inputData" />
+      <a :href="getKossieCoderLink('kossiecoder')">코지코더채널</a>
+    </div>
+
     <script>
       new Vue({
         el: '#app',
@@ -16,8 +21,14 @@
             name: 'jaewoo',
             age: 29,
           },
+          inputData: 'hello',
+          type: 'text',
+          link: 'https://youtube.com/',
         },
         methods: {
+          getKossieCoderLink(channel) {
+            return this.link + channel;
+          },
           nextYear(greeting) {
             return (
               greeting +
