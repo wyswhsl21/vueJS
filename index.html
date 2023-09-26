@@ -8,40 +8,28 @@
   </head>
   <body>
     <div id="app">
-      {{nextYear('안녕하세요')}}
-      <input :type="type" :value="inputData" />
-      <a :href="getKossieCoderLink('kossiecoder')">코지코더채널</a>
+      <form v-on:submit.prevent="submit">
+        <input type="text" /><br />
+        <button type="submit">제출하기</button>
+      </form>
     </div>
 
     <script>
       new Vue({
         el: '#app',
         data: {
-          person: {
-            name: 'jaewoo',
-            age: 29,
-          },
-          inputData: 'hello',
-          type: 'text',
-          link: 'https://youtube.com/',
+          year: 2018,
         },
         methods: {
-          getKossieCoderLink(channel) {
-            return this.link + channel;
+          plus() {
+            this.year++;
           },
-          nextYear(greeting) {
-            return (
-              greeting +
-              '!' +
-              (this.person.name +
-                ' 는 내년에' +
-                (this.person.age + 1) +
-                ' 살 입니다')
-            );
+          minus() {
+            this.year--;
           },
-        },
-        otherMethod: function () {
-          this.nextYear();
+          submit() {
+            alert('submitted');
+          },
         },
       });
     </script>
