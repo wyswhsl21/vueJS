@@ -9,7 +9,8 @@
   <body>
     <div id="app">
       <form v-on:submit.prevent="submit">
-        <input type="text" /><br />
+        <input type="text" v-model="text" /><br />
+        {{text}} <br />
         <button type="submit">제출하기</button>
       </form>
     </div>
@@ -19,7 +20,9 @@
         el: '#app',
         data: {
           year: 2018,
+          text: 'text',
         },
+
         methods: {
           plus() {
             this.year++;
@@ -30,6 +33,9 @@
           submit() {
             alert('submitted');
           },
+          // updateText(event) {
+          //   this.text = event.target.value;
+          // },
         },
       });
     </script>
