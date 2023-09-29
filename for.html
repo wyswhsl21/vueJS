@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{people[0].name}} {{people[0].age}}</div>
+      <div>{{people[1].name}} {{people[1].age}}</div>
+      <div>{{people[2].name}} {{people[2].age}}</div>
+      <hr />
+      <div v-for="person in people">{{person.name}} {{person.age}}</div>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          people: [
+            { name: 'a', age: 19 },
+            { name: 'b', age: 20 },
+            { name: 'c', age: 21 },
+          ],
+        },
+
+        methods: {},
+      });
+    </script>
+  </body>
+</html>
