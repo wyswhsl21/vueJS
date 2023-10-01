@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{name}}</div>
+      <button @click="changeUpdate">Updated</button>
+    </div>
+    <div id="app-1">
+      {{name}}
+
+      <button @click="changeUpdate">Clcik</button>
+    </div>
+
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          name: 'jaewoo',
+        },
+
+        methods: {
+          changeUpdate() {
+            app1.name = '나는 원래 있던 인스턴스야';
+          },
+        },
+      });
+      const app1 = new Vue({
+        el: '#app-1',
+        data: {
+          name: 'jaewoo',
+        },
+
+        methods: {
+          changeUpdate() {
+            app.name = '나는 1번 인스턴스인데';
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
